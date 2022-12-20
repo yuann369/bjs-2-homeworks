@@ -10,22 +10,19 @@ function solveEquation(a, b, c) {
     arr[1]=(-b - Math.sqrt(d) )/(2*a);
 
   }
-  else {
-    arr = [];
-  }
   return arr;
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (percent === "" || percent === " " || isNaN(Number(percent))) {
+  if (isNaN(Number(percent))) {
     console.log('Параметр "Процентная ставка" содержит неправильное значение "${percent}"');
     return `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
   }
-  if (contribution === "" || contribution === " " || isNaN(Number(contribution))) {
+  if (isNaN(Number(contribution))) {
     console.log('Параметр "Начальный взнос" содержит неправильное значение "${contribution}"');
     return `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
   }
-  if (amount === "" || amount === " " || isNaN(Number(amount))) {
+  if (isNaN(Number(amount))) {
     console.log('Параметр "Общая стоимость содержит неправильное значение "${contribution}"');
     return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
   }
@@ -44,5 +41,5 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let totalSum = paymentMonth*month;
 
   console.log(totalSum.toFixed(2));
-  return totalSum.toFixed(2);
+  return Number(totalSum.toFixed(2));
 }
